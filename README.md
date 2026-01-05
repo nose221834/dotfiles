@@ -5,4 +5,5 @@ brew install stow sheldon
 
 ## apply
 stow zsh
-syow ghostty
+stow ghostty
+stow starship
