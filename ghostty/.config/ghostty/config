@@ -45,8 +45,9 @@ macos-titlebar-style = transparent
 
 # なんとなく色を変えてみる
 macos-icon = custom-style
-macos-icon-ghost-color = fa5
-macos-icon-screen-color = 000
+macos-icon-frame = chrome
+macos-icon-ghost-color = 010101
+macos-icon-screen-color = 769ff0
 
 # 環境によって変えるかも
 quick-terminal-screen = mouse
