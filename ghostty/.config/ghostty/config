@@ -1,10 +1,21 @@
 theme = Ayu
 
-font-family = Osaka
-# フォントを読みやすくする
-font-thicken
-# フォントサイズを指定
-font-size = 16
+font-family = JetBrainsMonoNL Nerd Font Mono
+font-feature = -dlig
+font-size = 14
+
+font-style-bold = false
+font-style-italic = false
+font-style-bold-italic = false
+
+font-thicken = true
+font-thicken-strength = 1
+
+alpha-blending = linear
+
+adjust-cell-width = -1
+adjust-cell-height = 2
+
 
 # 背景はちょっと透過している黒
 background = 000
@@ -45,3 +56,6 @@ quick-terminal-position = "top"
 quick-terminal-screen = "main"
 quick-terminal-animation-duration = 0.3
 keybind = "global:cmd+n=toggle_quick_terminal"
+
+# SSH環境でエラーを出さないための設定
+shell-integration-features = ssh-terminfo,ssh-env
