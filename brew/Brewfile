@@ -1,56 +1,143 @@
+tap "go-task/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jandedobbeleer/oh-my-posh"
 tap "teamookla/speedtest"
 tap "zfdang/free-for-macos"
-brew "hashicorp/tap/terraform", link: false
+# Official Amazon AWS command-line interface
 brew "awscli"
+# GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
 brew "cloudflared"
+# Modern, maintained replacement for ls
+brew "eza"
+# Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Enable transparent encryption/decryption of files in a git repo
+brew "git-crypt"
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Improved top (interactive process viewer)
 brew "htop"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# Mac App Store command-line interface
+brew "mas"
+# Run a Kubernetes cluster locally
+brew "minikube"
+# Polyglot runtime manager (asdf rust clone)
 brew "mise"
-# brew "pinentry-mac"
-# brew "postgresql@14"
+# Node.js version manager
+brew "nodebrew"
+# Manage multiple Node.js versions
+brew "nvm"
+# Development kit for the Java programming language
+brew "openjdk@11"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Object-relational database system
+brew "postgresql@14"
+# Fast, configurable, shell plugin manager
 brew "sheldon"
+# Cross-shell prompt for astronauts
 brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
-# brew "tcl-tk"
+# Tool Command Language
+brew "tcl-tk"
+# Terraform version manager inspired by rbenv
 brew "tfenv"
+# Terminal multiplexer
 brew "tmux"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# HTTP load testing tool and library
+brew "vegeta"
+# Internet file retriever
 brew "wget"
+# Task runner / simpler Make alternative written in Go
+brew "go-task/tap/go-task"
+# Terraform
+brew "hashicorp/tap/terraform", link: false
+# Prompt theme engine for any shell
+brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+# Ookla Speedtest
+brew "teamookla/speedtest/speedtest"
+# Command-line memory status tool for MacOS X, similar to free(1) on Linux
+brew "zfdang/free-for-macos/free-for-macos"
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Command-line interface for 1Password
 cask "1password-cli"
+# Enable Windows-like alt-tab
+cask "alt-tab"
+# Chromium based browser
 cask "arc"
+# Records audio from any application
+cask "audio-hijack"
+# Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
+# OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Write, edit, and chat about your code with AI
 cask "cursor"
+# Voice and text chat software
 cask "discord"
+# Online diagram software
 cask "drawio"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Free and open-source image editor
+cask "gimp"
+# Web browser
 cask "google-chrome"
+# Kubernetes IDE
 cask "lens"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Spreadsheet software
+cask "microsoft-excel"
+# Presentation software
+cask "microsoft-powerpoint"
+# Word processor
+cask "microsoft-word"
+# Minimal installer for conda
 cask "miniconda"
+# Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# App to write, plan, collaborate, and get organised
 cask "notion"
+# Replacement for Docker Desktop
 cask "orbstack"
+# Collaboration platform for API development
 cask "postman"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Team communication and collaboration software
 cask "slack"
+# Music streaming service
 cask "spotify"
+# System monitor for the menu bar
 cask "stats"
+# Mesh VPN based on WireGuard
 cask "tailscale-app"
+# Open-source code editor
 cask "visual-studio-code"
+# Rust-based terminal
 cask "warp"
+# Open-source version of the X.Org X Window System
 cask "xquartz"
+# Video communication and virtual meeting platform
 cask "zoom"
 vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "antfu.browse-lite"
@@ -121,5 +208,15 @@ vscode "shopify.ruby-lsp"
 vscode "toba.vsfire"
 vscode "tomoki1207.pdf"
 vscode "usernamehw.errorlens"
+vscode "vue.volar"
 vscode "wayou.vscode-todo-highlight"
 vscode "yzhang.markdown-all-in-one"
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "github.com/fatih/gomodifytags"
+go "github.com/haya14busa/goplay/cmd/goplay"
+go "golang.org/x/tools/gopls"
+go "github.com/cweill/gotests/gotests"
+go "github.com/josharian/impl"
+go "honnef.co/go/tools/cmd/staticcheck"
+go "github.com/orisano/wayt"
