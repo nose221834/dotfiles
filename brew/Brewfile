@@ -69,8 +69,6 @@ brew "wget"
 brew "go-task/tap/go-task"
 # Terraform
 brew "hashicorp/tap/terraform", link: false
-# Prompt theme engine for any shell
-brew "jandedobbeleer/oh-my-posh/oh-my-posh"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # Command-line memory status tool for MacOS X, similar to free(1) on Linux

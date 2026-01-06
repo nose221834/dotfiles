@@ -19,7 +19,7 @@ adjust-cell-height = 2
 
 # 背景はちょっと透過している黒
 background = 000
-background-opacity = 0.70
+background-opacity = 0.60
 
 # カーソルはblockで点滅させない
 cursor-style = block
