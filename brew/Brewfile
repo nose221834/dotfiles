@@ -67,6 +67,8 @@ brew "uv"
 brew "vegeta"
 # Internet file retriever
 brew "wget"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # Task runner / simpler Make alternative written in Go
 brew "go-task/tap/go-task"
 # Terraform
