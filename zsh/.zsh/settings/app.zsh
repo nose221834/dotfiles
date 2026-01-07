@@ -10,36 +10,39 @@ function brew() {
     command brew "$@"
     local exit_code=$?
 
-    local brewfile="/Users/ichinose/dotfiles/brew/Brewfile"
+    local brewfile="$HOME/Brewfile"
 
-    # 成功時のみ & 構成変更っぽい操作のみ
     if [[ $exit_code -eq 0 ]]; then
         case "$1" in
             install|uninstall|remove|tap|untap|reinstall)
-                # 親ディレクトリ作成
-                mkdir -p "${brewfile:h}"
+                # シンボリックリンクを解決して、実体のパスを取得 (:A は zsh 特有の修飾子)
+                local real_brewfile="${brewfile:A}"
+                # 実体のあるディレクトリを取得
+                local repo_dir="${real_brewfile:h}"
+
+                # 親ディレクトリ作成 (実体のディレクトリに対して)
+                mkdir -p "$repo_dir"
 
                 printf "\n\033[1;32m==>\033[0m Updating Brewfile...\n"
 
-                # ラッパーを避けて確実に本物のbrewを呼ぶ
-                command brew bundle dump --force --describe --file="$brewfile"
+                # 実体のパスに対して dump する
+                command brew bundle dump --force --describe --file="$real_brewfile"
                 local dump_code=$?
 
                 if [[ $dump_code -eq 0 ]]; then
                     printf "\033[1;32m==>\033[0m Brewfile updated!\n"
 
-                    # --- Git操作ブロック開始 ---
-                    # Brewfileのあるディレクトリを変数に格納 (zshの修飾子 :h を使用)
-                    local repo_dir="${brewfile:h}"
-
-                    # 変更があるか確認してからコミット・プッシュ
-                    # (git -C でディレクトリを指定して実行)
-                    if [[ -n $(git -C "$repo_dir" status --porcelain "$brewfile") ]]; then
+                    # --- Git操作ブロック ---
+                    # 変更があるか確認 (実体のディレクトリで実行)
+                    if [[ -n $(git -C "$repo_dir" status --porcelain "$real_brewfile") ]]; then
                         printf "\033[1;32m==>\033[0m Committing and Pushing to Git...\n"
+                        printf "    Repo: %s\n" "$repo_dir"
 
-                        git -C "$repo_dir" add "$brewfile"
+                        git -C "$repo_dir" add "$real_brewfile"
                         git -C "$repo_dir" commit -m "$commit_msg"
-                        git -C "$repo_dir" push
+                        # ここでupstreamエラーが出るなら、対症療法として origin main を指定することも可能
+                        # git -C "$repo_dir" push origin main
+                        git -C "$repo_dir" push origin main
 
                         printf "\033[1;32m==>\033[0m Done!\n"
                     else
@@ -56,7 +59,6 @@ function brew() {
 
     return $exit_code
 }
-
 
 # goのパスを追加
 export PATH=$PATH:`go env GOPATH`/bin
