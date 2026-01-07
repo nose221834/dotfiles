@@ -74,3 +74,9 @@ if command -v eza >/dev/null 2>&1; then
     # ツリー表示 (lt): 深さ2階層まで表示
     alias lt='eza --tree --level=2 --icons'
 fi
+
+# zoxideの初期化
+eval "$(zoxide init zsh --cmd cd)"
+
+# fzfの初期化
+source <(fzf --zsh)
