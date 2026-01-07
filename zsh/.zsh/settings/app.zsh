@@ -3,35 +3,57 @@ export PATH="/opt/homebrew/bin:$PATH"
 # .zsh/settings/app.zsh
 
 function brew() {
+    # 1. コミットメッセージ用に実行コマンド全体を文字列として取得
+    local commit_msg="brew $*"
+
     # 本来のbrewを実行
     command brew "$@"
     local exit_code=$?
 
-    local brewfile="$HOME/Brewfile"
+    local brewfile="/Users/ichinose/dotfiles/brew/Brewfile"
 
     # 成功時のみ & 構成変更っぽい操作のみ
     if [[ $exit_code -eq 0 ]]; then
         case "$1" in
             install|uninstall|remove|tap|untap|reinstall)
-                # 親ディレクトリ作成（ないとdumpが失敗する）
+                # 親ディレクトリ作成
                 mkdir -p "${brewfile:h}"
 
                 printf "\n\033[1;32m==>\033[0m Updating Brewfile...\n"
+
                 # ラッパーを避けて確実に本物のbrewを呼ぶ
                 command brew bundle dump --force --describe --file="$brewfile"
                 local dump_code=$?
 
                 if [[ $dump_code -eq 0 ]]; then
                     printf "\033[1;32m==>\033[0m Brewfile updated!\n"
+
+                    # --- Git操作ブロック開始 ---
+                    # Brewfileのあるディレクトリを変数に格納 (zshの修飾子 :h を使用)
+                    local repo_dir="${brewfile:h}"
+
+                    # 変更があるか確認してからコミット・プッシュ
+                    # (git -C でディレクトリを指定して実行)
+                    if [[ -n $(git -C "$repo_dir" status --porcelain "$brewfile") ]]; then
+                        printf "\033[1;32m==>\033[0m Committing and Pushing to Git...\n"
+
+                        git -C "$repo_dir" add "$brewfile"
+                        git -C "$repo_dir" commit -m "$commit_msg"
+                        git -C "$repo_dir" push
+
+                        printf "\033[1;32m==>\033[0m Done!\n"
+                    else
+                        printf "\033[1;30m==>\033[0m No changes to commit.\n"
+                    fi
+                    # --- Git操作ブロック終了 ---
+
                 else
-                    # ここで失敗しても、元のbrew成功を“失敗扱いにしない”
                     printf "\033[1;33m==>\033[0m Brewfile update failed (kept brew exit code = %d)\n" "$exit_code" >&2
                 fi
                 ;;
         esac
     fi
 
-    # 重要：brew本体の終了コードを返す
     return $exit_code
 }
 
