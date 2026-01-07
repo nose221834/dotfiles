@@ -37,12 +37,12 @@ setopt hist_no_store
 setopt hist_ignore_space
 
 # search history の 関数
-function h() {
-    if [ -n "$1" ]; then
-        # 引数がある場合: その文字で grep 検索
-        history -i 0 | grep "$@"
-    else
-        # 引数がない場合: 履歴全体を表示
-        history -i 0
-    fi
-}
+# function h() {
+#     if [ -n "$1" ]; then
+#         # 引数がある場合: その文字で grep 検索
+#         history -i 0 | grep "$@"
+#     else
+#         # 引数がない場合: 履歴全体を表示
+#         history -i 0
+#     fi
+# }
