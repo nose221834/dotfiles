@@ -37,6 +37,8 @@ brew "mas"
 brew "minikube"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Node.js version manager
 brew "nodebrew"
 # Manage multiple Node.js versions
