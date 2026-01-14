@@ -60,3 +60,7 @@ keybind = "global:cmd+n=toggle_quick_terminal"
 
 # SSH環境でエラーを出さないための設定
 shell-integration-features = ssh-terminfo,ssh-env
+
+# ghosttyアイコンが跳ねないように設定
+bell-features = false
+
