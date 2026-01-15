@@ -56,7 +56,7 @@ quick-terminal-screen = mouse
 quick-terminal-position = "top"
 quick-terminal-screen = "main"
 quick-terminal-animation-duration = 0.3
-keybind = "global:cmd+n=toggle_quick_terminal"
+keybind = "global:opt+n=toggle_quick_terminal"
 
 # SSH環境でエラーを出さないための設定
 shell-integration-features = ssh-terminfo,ssh-env
