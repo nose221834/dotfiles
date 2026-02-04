@@ -85,6 +85,8 @@ brew "zfdang/free-for-macos/free-for-macos"
 cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
+# View, print, and comment on PDF documents
+cask "adobe-acrobat-reader"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # Chromium based browser
