@@ -49,6 +49,8 @@ brew "nvm"
 brew "openjdk@11"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Object-relational database system
 brew "postgresql@14"
 # Fast, configurable, shell plugin manager
