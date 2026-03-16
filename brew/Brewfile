@@ -27,8 +27,6 @@ brew "git"
 brew "git-crypt"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Improved top (interactive process viewer)
 brew "htop"
 # Lightweight and flexible command-line JSON processor
@@ -213,12 +211,3 @@ vscode "usernamehw.errorlens"
 vscode "vue.volar"
 vscode "wayou.vscode-todo-highlight"
 vscode "yzhang.markdown-all-in-one"
-go "github.com/go-delve/delve/cmd/dlv"
-go "github.com/golangci/golangci-lint/cmd/golangci-lint"
-go "github.com/fatih/gomodifytags"
-go "github.com/haya14busa/goplay/cmd/goplay"
-go "golang.org/x/tools/gopls"
-go "github.com/cweill/gotests/gotests"
-go "github.com/josharian/impl"
-go "honnef.co/go/tools/cmd/staticcheck"
-go "github.com/orisano/wayt"
