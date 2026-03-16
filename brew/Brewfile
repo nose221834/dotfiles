@@ -95,8 +95,6 @@ cask "arc"
 cask "audio-hijack"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
-# OpenAI's official ChatGPT desktop app
-cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
@@ -149,6 +147,7 @@ cask "xquartz"
 cask "zoom"
 vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "antfu.browse-lite"
+vscode "anthropic.claude-code"
 vscode "artdiniz.quitcontrol-vscode"
 vscode "biomejs.biome"
 vscode "bradlc.vscode-tailwindcss"
