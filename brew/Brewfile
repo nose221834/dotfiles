@@ -75,7 +75,7 @@ brew "vegeta"
 brew "wget"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# Task runner / simpler Make alternative written in Go
+# A fast, cross-platform build tool inspired by Make, designed for modern workflows.
 brew "go-task/tap/go-task"
 # Terraform
 brew "hashicorp/tap/terraform", link: false
@@ -97,6 +97,8 @@ cask "audio-hijack"
 cask "balenaetcher"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Voice and text chat software
@@ -161,7 +163,6 @@ vscode "esbenp.prettier-vscode"
 vscode "formulahendry.auto-close-tag"
 vscode "formulahendry.auto-rename-tag"
 vscode "george-alisson.html-preview-vscode"
-vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
