@@ -41,8 +41,6 @@ brew "minikube"
 brew "mise"
 # Node.js version manager
 brew "nodebrew"
-# Manage multiple Node.js versions
-brew "nvm"
 # Development kit for the Java programming language
 brew "openjdk@11"
 # Pinentry for GPG on Mac
