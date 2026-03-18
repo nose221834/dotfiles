@@ -26,7 +26,7 @@ function brew() {
                 printf "\n\033[1;32m==>\033[0m Updating Brewfile...\n"
 
                 # 実体のパスに対して dump する
-                command brew bundle dump --force --describe --no-vscode --no-go --no-mas --file="$real_brewfile"
+                command brew bundle dump --force --describe --no-vscode --no-go --no-uv --file="$real_brewfile"
                 local dump_code=$?
 
                 if [[ $dump_code -eq 0 ]]; then
